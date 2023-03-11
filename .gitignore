@@ -1,3 +1,6 @@
+# directories
+**/node_modules
+
 # Compiler files
 cache/
 out/

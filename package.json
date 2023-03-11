@@ -1,0 +1,11 @@
+{
+   "name": "rs-solidity",
+   "version": "1.0.0",
+   "repository": "git@github.com:bayological/rs-solidity.git",
+   "devDependencies": {
+      "prettier": "^2.8.4",
+      "prettier-plugin-solidity": "^1.1.3",
+      "solhint": "^3.4.1",
+      "solhint-plugin-prettier": "^0.0.5"
+   }
+}
