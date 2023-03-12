@@ -3,10 +3,12 @@ pragma solidity 0.8.19;
 
 import { IERC1363 } from "oz-contracts/interfaces/IERC1363.sol";
 import { IERC1363Receiver } from "oz-contracts/interfaces/IERC1363Receiver.sol";
+
 import { IERC165 } from "oz-contracts/utils/introspection/IERC165.sol";
 import { ERC165 } from "oz-contracts/utils/introspection/ERC165.sol";
 
 import { ERC20 } from "oz-contracts/token/ERC20/ERC20.sol";
+
 import { Ownable } from "oz-contracts/access/Ownable.sol";
 import { Address } from "oz-contracts/utils/Address.sol";
 
@@ -56,7 +58,7 @@ contract SanctionableToken is ERC20, ERC165, Ownable, IERC1363 {
    * @param amount The amount of tokens to transfer.
    * @return True if the transfer succeeded, false otherwise.
    */
-  function transferAndCall(address to, uint256 amount) external override returns (bool) {
+  function transferAndCall(address to, uint256 amount) external returns (bool) {
     _transfer(_msgSender(), to, amount);
     return _callOnTransferReceived(to, amount, "");
   }
